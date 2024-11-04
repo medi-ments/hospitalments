@@ -2,7 +2,7 @@ const backendURL = "https://hospitalments.onrender.com/api/items"
 
 // Helper function to fetch data from the API
 async function fetchData(url, options = {}) {
-    const response = await fetch('${backendURL}${url}', options);
+    const response = await fetch('${backendURL}${url}',options);
     if (!response.ok) throw new Error("Network response was not ok");
     return await response.json();
 }
@@ -46,7 +46,7 @@ async function loadAllItems() {
 // Load expired items and display them
 async function loadExpiredItems() {
     try {
-        const expiredItems = await fetchData("/api/items/expired");
+        const expiredItems = await fetchData("https://hospitalments.onrender.com/api/items/expired");
         displayItems(expiredItems, "expiredItemsContainer");
     } catch (error) {
         console.error("Error loading expired items:", error);
