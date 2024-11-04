@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Inventory Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Hospital Equipment & Medicine Tracker</h1>
+        <nav>
+            <a href="#add-item">Add New Item</a>
+            <a href="#view-items">View All Items</a>
+            <a href="#expired-items">Expired Items</a>
+            <a href="#filter-search">Filter & Search</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Add New Item Form -->
+        <section id="add-item">
+            <h2>Add New Item</h2>
+            <form id="itemForm">
+                <label for="name">Item Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="Medicine">Medicine</option>
+                    <option value="Equipment">Equipment</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="date" id="expiry-date" required>
+
+                <label for="arrival-date">Arrival Date:</label>
+                <input type="date" id="arrival-date" required>
+
+                <button type="submit">Add Item</button>
+            </form>
+        </section>
+
+        <!-- View All Items -->
+        <section id="view-items">
+            <h2>All Items</h2>
+            <div id="allItemsContainer"></div>
+        </section>
+
+        <!-- View Expired Items -->
+        <section id="expired-items">
+            <h2>Expired Items</h2>
+            <div id="expiredItemsContainer"></div>
+        </section>
+
+        <!-- Filter & Search Items -->
+        <section id="filter-search">
+            <h2>Filter & Search</h2>
+            <form id="filterForm">
+                <input type="text" id="searchName" placeholder="Search by Name">
+                <select id="searchCategory">
+                    <option value="">All Categories</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Equipment">Equipment</option>
+                </select>
+                <button type="submit">Filter</button>
+            </form>
+            <div id="filteredItemsContainer"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hospital Inventory Tracker</p>
+    </footer>
+</body>
+</html>
