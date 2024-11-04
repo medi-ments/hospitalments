@@ -2,7 +2,7 @@ const backendURL = "https://hospitalments.onrender.com/api/items"
 
 // Helper function to fetch data from the API
 async function fetchData(url, options = {}) {
-    const response = await fetch(${backendURL}${url}, options);
+    const response = await fetch('${backendURL}${url}', options);
     if (!response.ok) throw new Error("Network response was not ok");
     return await response.json();
 }
@@ -19,7 +19,7 @@ document.getElementById("itemForm").addEventListener("submit", async (e) => {
 
     try {
         const newItem = { name, category, quantity, expiryDate, arrivalDate };
-        await fetchData("/api/items", {
+        await fetchData("https://hospitalments.onrender.com/api/items", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(newItem),
