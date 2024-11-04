@@ -7,7 +7,7 @@ const path = require("path");
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://adnanmohdk1234:FgSY2VP3g6hRKGpG@cluster-01.ewtn7.mongodb.net/hospitalInventory", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://adnanmohdk1234:FgSY2VP3g6hRKGpG@cluster-01.ewtn7.mongodb.net/hospitalInventory?retryWrites=true&w=majority&appName=cluster-01", {
 useNewUrlParser: true,
 useUnifiedTopology: true,
 });
