@@ -35,7 +35,8 @@ document.getElementById("itemForm").addEventListener("submit", async (e) => {
 // Load all items and display them
 async function loadAllItems() {
     try {
-        const items = await fetchData("/api/items");
+        const response = await fetch("https://hospitalments.onrender.com/api/items");
+        const items = await response.json();
         displayItems(items, "allItemsContainer");
     } catch (error) {
         console.error("Error loading items:", error);
