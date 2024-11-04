@@ -33,11 +33,11 @@ app.post("/api/items", async (req, res) => {
   try {
     const { name, category, quantity, expiryDate, arrivalDate } = req.body;
     const item = new Item({
-            name: req.body.name,
-            category: req.body.category,
-            quantity: req.body.quantity,
-            expiryDate: req.body.expiryDate,
-            arrivalDate: req.body.arrivalDate, 
+      name: req.body.name,
+      category: req.body.category,
+      quantity: req.body.quantity,
+      expiryDate: req.body.expiryDate,
+      arrivalDate: req.body.arrivalDate, 
    });
     await item.save();
     res.status(201).send(item);
