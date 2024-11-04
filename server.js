@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
 // Route to add a new item
-app.post("/api/items", async (req, res) => {
+app.post("https://hospitalments.onrender.com/api/items", async (req, res) => {
   try {
     const { name, category, quantity, expiryDate, arrivalDate } = req.body;
     const item = new Item({
@@ -47,7 +47,7 @@ app.post("/api/items", async (req, res) => {
 });
 
 // Route to get all items
-app.get("/api/items", async (req, res) => {
+app.get("https://hospitalments.onrender.com/api/items", async (req, res) => {
   try {
     const items = await Item.find();
     res.status(200).send(items);
